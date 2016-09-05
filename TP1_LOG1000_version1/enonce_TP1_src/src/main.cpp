@@ -4,21 +4,21 @@
 using namespace std;
 
 
-int main(void){
+int main(int argc, char* argv[]){
 
   vector<string> noms;
-  lisFichier(noms,"data/noms.txt");
+  lisFichier(noms,argv[1]);
 
   vector<string> prenoms;
-  lisFichier(prenoms,"data/prenoms.txt");
+  lisFichier(prenoms,argv[2]);
 
   vector<string> mails;
-  lisFichier(mails,"data/mails.txt");
+  lisFichier(mails,argv[3]);
 
   vector<string> telephones;
-  lisFichier(telephones,"data/telephones.txt");
+  lisFichier(telephones,argv[4]);
 
   vector<string> lignes_generees;
   generezLignes(lignes_generees,noms,prenoms,mails,telephones,15);
-  ecrivezLignes(lignes_generees,"data.txt");
+  ecrivezLignes(lignes_generees,argv[5]);
 }
