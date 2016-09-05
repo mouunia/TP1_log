@@ -35,8 +35,10 @@ string ligneArbitraire(const vector<string>& lignes){
 
 void generezLignes(vector<string>& lignes_generees,const vector<string>& noms,const vector<string>& prenoms,const vector<string>& cours,const vector<string>& sites,int nr){
   srand(time(0));
-  
+  if(nr>=0)
+  {
   for(int i=0;i<nr;i++){
+      
     string nom=ligneArbitraire(noms);
     string prenom=ligneArbitraire(prenoms);
     string uncours=ligneArbitraire(cours);
@@ -45,6 +47,7 @@ void generezLignes(vector<string>& lignes_generees,const vector<string>& noms,co
     stringstream ligne;
     ligne << nom.c_str() << "," << prenom.c_str() << "," << uncours.c_str() << "," << site.c_str();
     lignes_generees.push_back(ligne.str());
+  }
   }
 }
 
