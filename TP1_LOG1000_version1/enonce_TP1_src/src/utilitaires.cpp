@@ -38,9 +38,10 @@ void generezLignes(vector<string>& lignes_generees,const vector<string>& noms,co
   if(nr>=0)
   {
   for(int i=0;i<nr;i++){
-      
+     do{ 
     string nom=ligneArbitraire(noms);
     string prenom=ligneArbitraire(prenoms);
+     } while(estDuplicat(nom,prenom));
     string uncours=ligneArbitraire(cours);
     string site=ligneArbitraire(sites);
 
@@ -72,14 +73,14 @@ void ecrivezLignes(const vector<string>& lignes_generees,const string& fNom){
 *Returns:
 * true si <first,second> a été rencontrée avant pendant le programme
 */
-/*
+
 bool estDuplicat(const string& first,const string& second){
  static set<string> dejavu;
  //[compléter ici]
+ string pair = first+","+ second;
  set<string>::iterator it=dejavu.find(pair);
  if(it!=dejavu.end()){
-	return true;
-	//duplication
+	return true; //duplication
 	}
  else
 	{
@@ -87,4 +88,4 @@ bool estDuplicat(const string& first,const string& second){
 	return false;
 	}
 }
-*/
+

@@ -12,5 +12,5 @@ void generezLignes(std::vector<std::string>& lignes_generees,const std::vector<s
 
 void ecrivezLignes(const std::vector<std::string>& lignes_generees,const std::string& fNom);
 
-// bool estDuplicat(const string& first, const string& second);
+bool estDuplicat(const string& first, const string& second);
 #endif
