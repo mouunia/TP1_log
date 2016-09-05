@@ -19,7 +19,7 @@ NOMS=`head -n 1 $DATA | perl -pe "s/,/<\/th><th>/g"`
 echo "<tr><th>${NOMS}</th></tr>" >> $OUTPUT
 
 #3. Maintenant les donnees sont transformees en HTML
-grep -P -v -e "^nom,prenom" $DATA | perl -pe "s/,/<\/td><td>/g" | perl -pe "s/(http:\/\/.*$)/<a href=\"\1\">\1<\/a>/" | perl -pe "s/^(.*)$/<tr><td>\1<\/td><\/tr>/" >> $OUTPUT
+grep -P -v -e "^prenom,nom" $DATA | perl -pe "s/,/<\/td><td>/g" | perl -pe "s/(http:\/\/.*$)/<a href=\"\1\">\1<\/a>/" | perl -pe "s/^(.*)$/<tr><td>\1<\/td><\/tr>/" >> $OUTPUT
 
 #4. On finit avec la partie de $INPUT apres la ligne de coupage
 TAILLE_INPUT=`wc -l $INPUT | perl -pe "s/^ *(\d+) +.*$/\1/"`
