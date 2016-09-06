@@ -42,11 +42,11 @@ void generezLignes(vector<string>& lignes_generees,const vector<string>& noms,co
     string nom=ligneArbitraire(noms);
     string prenom=ligneArbitraire(prenoms);
      } while(estDuplicat(nom,prenom));
-    string mail=ligneArbitraire(mails);
+   // string mail=ligneArbitraire(mails);
     string telephone=ligneArbitraire(telephones);
 
     stringstream ligne;
-    ligne << prenom.c_str() << "," << nom.c_str() << "," << mail.c_str() << "," << telephone.c_str();
+    ligne << prenom.c_str() << "," << nom.c_str() << "," /*<< mail.c_str() << "," */<< telephone.c_str();
     lignes_generees.push_back(ligne.str());
   }
   }
@@ -55,8 +55,8 @@ void generezLignes(vector<string>& lignes_generees,const vector<string>& noms,co
 void ecrivezLignes(const vector<string>& lignes_generees,const string& fNom){
   ofstream fichier;
   fichier.open(fNom.c_str());
-
-  fichier << "prenom,nom,adresse mail,numero de telephone" << endl;
+// adresse mail 
+  fichier << "prenom,nom,numero de telephone" << endl;
   
   for(vector<string>::const_iterator it=lignes_generees.begin();it!=lignes_generees.end();it++){
     fichier << it->c_str() << endl;
